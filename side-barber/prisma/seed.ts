@@ -3,6 +3,12 @@ const prisma = new PrismaClient();
 
 async function seedDatabase() {
   try {
+
+    // Limpa os dados antigos
+    await prisma.booking.deleteMany()
+    await prisma.barberShopService.deleteMany()
+    await prisma.barberShop.deleteMany()
+
     const images = [
       "https://utfs.io/f/c97a2dc9-cf62-468b-a851-bfd2bdde775f-16p.png",
       "https://utfs.io/f/45331760-899c-4b4b-910e-e00babb6ed81-16q.png",
@@ -60,42 +66,42 @@ async function seedDatabase() {
         description: "Estilo personalizado com as últimas tendências.",
         price: 60.0,
         imageUrl:
-          "https://utfs.io/f/0ddfbd26-a424-43a0-aaf3-c3f1dc6be6d1-1kgxo7.png",
+          "https://as1.ftcdn.net/v2/jpg/03/02/85/06/1000_F_302850609_epb32r118Vn1TuzheVKLjMOoXvGMpdIK.jpg",
       },
       {
         name: "Barba",
         description: "Modelagem completa para destacar sua masculinidade.",
         price: 40.0,
         imageUrl:
-          "https://utfs.io/f/e6bdffb6-24a9-455b-aba3-903c2c2b5bde-1jo6tu.png",
+          "https://as1.ftcdn.net/v2/jpg/01/33/83/56/1000_F_133835673_Cw6chW8STrYEOPcqXbr6R7q03uWD7U6A.jpg",
       },
       {
         name: "Pézinho",
         description: "Acabamento perfeito para um visual renovado.",
         price: 35.0,
         imageUrl:
-          "https://utfs.io/f/8a457cda-f768-411d-a737-cdb23ca6b9b5-b3pegf.png",
+          "https://as1.ftcdn.net/v2/jpg/02/31/50/00/1000_F_231500081_WUR0SWoZVsy7LVYlvfBJFklHFzVqfGv2.jpg",
       },
       {
         name: "Sobrancelha",
         description: "Expressão acentuada com modelagem precisa.",
         price: 20.0,
         imageUrl:
-          "https://utfs.io/f/2118f76e-89e4-43e6-87c9-8f157500c333-b0ps0b.png",
+          "https://as2.ftcdn.net/v2/jpg/12/54/87/73/1000_F_1254877331_gcuuyziXXoB8r9qlKd3U0bMPyV4t4PiE.jpg",
       },
       {
         name: "Massagem",
         description: "Relaxe com uma massagem revigorante.",
         price: 50.0,
         imageUrl:
-          "https://utfs.io/f/c4919193-a675-4c47-9f21-ebd86d1c8e6a-4oen2a.png",
+          "https://as1.ftcdn.net/v2/jpg/13/12/50/06/1000_F_1312500665_1FfBQRCqNooiPlS7zvvluTNuQUyE21EY.jpg",
       },
       {
         name: "Hidratação",
         description: "Hidratação profunda para cabelo e barba.",
         price: 25.0,
         imageUrl:
-          "https://utfs.io/f/8a457cda-f768-411d-a737-cdb23ca6b9b5-b3pegf.png",
+          "https://as2.ftcdn.net/v2/jpg/13/66/04/29/1000_F_1366042942_fYfXdQYk5c82d9Kxy8kwUKJvhBves7Tc.jpg",
       },
     ];
 

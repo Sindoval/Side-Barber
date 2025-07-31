@@ -3,8 +3,20 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "utfs.io",
-      }
+        protocol: 'https',
+        hostname: 'utfs.io',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'as1.ftcdn.net',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'as2.ftcdn.net',
+        pathname: '/**',
+      },
     ],
   },
 };
