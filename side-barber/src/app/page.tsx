@@ -52,8 +52,6 @@ export default async function Home() {
           ))}
         </div>
 
-
-
         {/* IMAGEM */}
         <div className="relative mt-6 h-[150px] w-full">
           <Image
