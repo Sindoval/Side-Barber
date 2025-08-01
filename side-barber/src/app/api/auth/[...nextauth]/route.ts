@@ -9,8 +9,8 @@ const handler = NextAuth({
   adapter: PrismaAdapter(db) as Adapter,
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLINET_ID as string,
-      clientSecret: process.env.GOOGLE_CLINET_SECRET as string,
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     })
   ]
 })
