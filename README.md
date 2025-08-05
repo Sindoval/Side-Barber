@@ -58,7 +58,60 @@ O usuário pode:
 
 ---
 
-## 📁 Estrutura de Código
 
-O projeto segue as **melhores práticas** de organização de um monorepo SaaS escalável:
+- **Componentes Reutilizáveis**: Design system baseado no Shadcn
+- **Separação de Lógicas**: Serviços, Hooks e Helpers separados
+- **Gerenciamento de Estado**: Simples, focado em hooks locais
+- **Validações**: Feitas com `zod` + `react-hook-form`
+
+---
+
+## 🔒 Autenticação
+
+Autenticação é feita com o `NextAuth.js`, utilizando o provedor do Google (OAuth2):
+
+- Sessões seguras
+- Tokens protegidos com JWT
+- Callback para personalização do fluxo
+
+---
+
+## 📦 Banco de Dados
+
+Modelado com **Prisma** e utilizando o **PostgreSQL** como banco principal.
+
+Exemplo de um model simplificado:
+
+```ts
+model Appointment {
+  id          String   @id @default(uuid())
+  user        User     @relation(fields: [userId], references: [id])
+  userId      String
+  barbershop  Barbershop @relation(fields: [barbershopId], references: [id])
+  barbershopId String
+  date        DateTime
+  createdAt   DateTime @default(now())
+}
+```
+
+# Clone o repositório
+git clone https://github.com/Sindoval/Side-Barber.git
+
+# Acesse a pasta
+cd side-barber
+
+# Instale as dependências
+npm install
+
+# Crie o arquivo .env e configure as variáveis
+cp .env.example .env
+DATABASE_URL=""
+GOOGLE_CLIENT_ID="'
+GOOGLE_CLIENT_SECRET=""
+
+# Rode as migrations
+npx prisma migrate dev
+
+# Rode o projeto
+npm run dev
 
