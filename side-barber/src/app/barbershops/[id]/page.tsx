@@ -15,7 +15,7 @@ interface BarbershopPageProps {
   }
 }
 
-const BarberShopsPage = async ({ params }: BarbershopPageProps) => {
+const BarberShopPage = async ({ params }: BarbershopPageProps) => {
   // chamar bd
   const barbershop = await db.barberShop.findUnique({
     where: {
@@ -104,4 +104,4 @@ const BarberShopsPage = async ({ params }: BarbershopPageProps) => {
   );
 }
 
-export default BarberShopsPage;
+export default BarberShopPage;
