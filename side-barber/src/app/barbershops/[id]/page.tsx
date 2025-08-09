@@ -89,6 +89,7 @@ const BarberShopPage = async ({ params }: BarbershopPageProps) => {
             <ServiceItem
               key={service.id}
               service={service}
+              barbershop={barbershop}
             />
           ))}
         </div>
