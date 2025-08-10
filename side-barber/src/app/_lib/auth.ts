@@ -16,9 +16,9 @@ export const authOptions: AuthOptions = {
     //useSession()
     async session({ session, user }) {
       session.user = {
-        ...session,
+        ...session.user,
         id: user.id,
-      } as any;
+      };
       return session;
     }
   }
