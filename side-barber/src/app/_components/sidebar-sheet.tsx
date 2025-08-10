@@ -6,14 +6,14 @@ import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon } from "lucide-react";
 import { SheetClose, SheetContent, SheetTitle } from "./ui/sheet";
 import { quickSearchOptions } from "../_constants/search";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import { signOut, useSession } from "next-auth/react";
 import { Avatar, AvatarImage } from "./ui/avatar";
+import SignInDialog from "./sign-in-dialog";
 
 
 const SidebarButton = () => {
   const { data } = useSession();
-  const handleLoginWithGoogleClick = () => signIn("google");
   const handleLogoutGoogleClick = () => signOut();
 
   return (
@@ -42,20 +42,7 @@ const SidebarButton = () => {
                 </Button>
               </DialogTrigger>
               <DialogContent className="w-[90%]">
-                <DialogHeader>
-                  <DialogTitle>Faça seu login na plataforma</DialogTitle>
-                  <DialogDescription>
-                    Conecte-se usando sua conta do Google
-                  </DialogDescription>
-                </DialogHeader>
-                <Button className="flex gap-1 font-bold" variant="outline" onClick={handleLoginWithGoogleClick}>
-                  <Image
-                    src="/Google.svg"
-                    height={18}
-                    width={18}
-                    alt="Fazer login com Google" />
-                  Google
-                </Button>
+                <SignInDialog />
               </DialogContent>
             </Dialog>
           </>
