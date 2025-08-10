@@ -1,3 +1,5 @@
+"use client"
+
 import { DialogDescription, DialogHeader, DialogTitle } from "./ui/dialog";
 import { Button } from "./ui/button";
 import Image from "next/image";
