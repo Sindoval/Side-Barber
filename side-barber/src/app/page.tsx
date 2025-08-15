@@ -9,6 +9,8 @@ import Search from "./_components/search";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./_lib/auth";
+import { format } from "date-fns";
+import { ptBR } from "date-fns/locale";
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -44,8 +46,8 @@ export default async function Home() {
       <Header />
       {/* TEXTO */}
       <div className="p-5">
-        <h2 className="text-xl font-bold">Olá, Usuário!</h2>
-        <p>Quinta-feira, 24 de Julho</p>
+        <h2 className="text-xl font-bold">Olá, {session?.user ? session.user.name : "bem vindo!"}</h2>
+        <p className="">{format(new Date(), "EEEE, dd 'de' MMMM", { locale: ptBR })}</p>
 
         {/* BUSCA */}
         <div className="mt-6">
