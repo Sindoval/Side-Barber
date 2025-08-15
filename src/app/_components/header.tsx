@@ -9,11 +9,11 @@ import Link from "next/link";
 const Header = () => {
   return (
     <Card>
-      <CardContent className="p-5 flex flex-row items-center justify-between">
+      <CardContent className="p-3 flex flex-row items-center justify-between">
         <Link href={"/"}>
           <Image
             alt="FSW Barber"
-            src="/Logo.png"
+            src="/side-logo.png"
             height={18}
             width={120}
           />

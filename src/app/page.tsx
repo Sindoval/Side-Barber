@@ -79,7 +79,7 @@ export default async function Home() {
         {/* IMAGEM */}
         <div className="relative mt-6 h-[150px] w-full">
           <Image
-            src="/BannerPizza.png"
+            src="/banner.png"
             alt="Agende nos melhores com FSW Barber"
             fill
             className="object-cover rounded-xl" />
