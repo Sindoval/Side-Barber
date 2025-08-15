@@ -62,11 +62,18 @@ const Bookings = async () => {
         <h1 className="text-xl font-bold">
           Agendamentos
         </h1>
-        <h2 className="uppercase text-gray-400 font-bold text-xs mt-6 mb-8 p-2">Confirmados</h2>
+        {confirmedBookings.length > 0 && (
+          <h2 className="uppercase text-gray-400 font-bold text-xs mt-6 mb-8 p-2">
+            Confirmados
+          </h2>
+        )}
         {confirmedBookings.map((booking) => (
           <BookingItem key={booking.id} booking={booking} />
         ))}
-        <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Finalizados</h2>
+        {concludedBookings.length > 0 && (
+          <h2 className="uppercase text-gray-400 font-bold text-xs mt-6 mb-8 p-2">
+            Finalizados
+          </h2>)}
         {concludedBookings.map((booking) => (
           <BookingItem key={booking.id} booking={booking} />
         ))}
