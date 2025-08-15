@@ -55,7 +55,7 @@ export default async function Home() {
         </div>
 
         {/* BUSCA RAPIDA*/}
-        <div className="mt-6 flex gap-3 overflow-x-scroll [&::-webkit-scrollbar]:hidden]">
+        <div className="mt-6 flex gap-3 overflow-x-scroll scrollbar-thin">
 
           {quickSearchOptions.map((option) => (
             <Button
@@ -87,7 +87,7 @@ export default async function Home() {
 
         {/* AGENDAMENTO */}
         <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Agendamentos</h2>
-        <div className="flex overflow-x-auto gap-3">
+        <div className="flex overflow-x-auto gap-3 scrollbar-thin">
           {bookings.map((booking) => (
             <BookingItem
               key={booking.id}
@@ -97,12 +97,12 @@ export default async function Home() {
         </div>
 
         <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Recomendados</h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden]">
+        <div className="flex gap-4 overflow-auto scrollbar-thin">
           {barbershops.map((barbershop) => <BarbershopItem key={barbershop.id} barbershop={barbershop} />)}
         </div>
 
         <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Populares</h2>
-        <div className="flex gap-4 overflow-auto [&::-webkit-scrollbar]:hidden]">
+        <div className="flex gap-4 overflow-auto scrollbar-thin">
           {popularBarbershops.map((barbershop) => <BarbershopItem key={barbershop.id} barbershop={barbershop} />)}
         </div>
       </div>
