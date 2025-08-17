@@ -86,15 +86,20 @@ export default async function Home() {
         </div>
 
         {/* AGENDAMENTO */}
-        <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Agendamentos</h2>
-        <div className="flex overflow-x-auto gap-3 scrollbar-thin">
-          {bookings.map((booking) => (
-            <BookingItem
-              key={booking.id}
-              booking={booking}
-            />
-          ))}
-        </div>
+        {bookings.length > 0 && (
+          <>
+            <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Agendamentos</h2>
+            <div className="flex overflow-x-auto gap-3 scrollbar-thin">
+              {bookings.map((booking) => (
+                <BookingItem
+                  key={booking.id}
+                  booking={booking}
+                />
+              ))}
+            </div>
+          </>
+        )}
+
 
         <h2 className="uppercase text-gray-400 font-bold text-xs mt-5 mb-3">Recomendados</h2>
         <div className="flex gap-4 overflow-auto scrollbar-thin">
